@@ -1,0 +1,12 @@
+.session-active{
+  @apply w-full h-screen flex flex-col items-center justify-center gap-5 px-20;
+}
+
+.session-active-title{
+  @apply w-fit h-fit text-[64px] text-primary;
+}
+
+.session-active-text{
+  @apply w-fit h-fit text-[36px] text-[#2A2A2A] text-center;
+}
+

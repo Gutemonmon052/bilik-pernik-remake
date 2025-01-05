@@ -1,0 +1,55 @@
+.benefit{
+  @apply w-full h-fit flex flex-row items-center justify-between relative;
+}
+
+.benefit-title{
+  @apply w-full h-fit flex items-center justify-center text-[36px] text-[#2A2A2A] p-10;
+}
+
+.benefit-list{
+  @apply w-full h-full flex relative;
+}
+
+.benefit-card{
+  @apply w-fit h-full flex flex-col items-center justify-center relative;
+}
+
+.benefit-card-media{
+  @apply w-fit h-fit relative;
+}
+
+.benefit-card-image{
+  @apply h-[250px] w-[300px];
+}
+
+.benefit-card-image img{
+  @apply w-full h-full object-cover;
+}
+
+.benefit-card-cover{
+  @apply w-full h-full bg-gradient-to-t from-[#2A2A2A] absolute z-10;
+}
+
+.benefit-card-text{
+  @apply h-full w-full text-[20px] text-[#FAFAFA] leading-[18px] absolute z-30 flex items-end pb-4 p-4;
+}
+
+/* .benefit-list {
+  @apply w-full h-fit flex flex-row justify-center items-center;
+}
+
+.benefit-card {
+  @apply w-full h-fit flex flex-col items-center justify-center gap-3 border-x-[1px] border-base-100;
+}
+
+.benefit-card-icon{
+  @apply w-full h-fit flex items-center justify-center;
+}
+.card-icon-media {
+  @apply w-[35px] h-[35px];
+}
+
+.benefit-card-text {
+  font-family: "Cabin";
+  @apply h-fit w-fit text-[14px] text-[#FAFAFA] leading-[18px];
+} */

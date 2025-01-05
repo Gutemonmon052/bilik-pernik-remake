@@ -1,0 +1,40 @@
+.cart{
+  @apply w-full h-fit px-20 py-32 relative;
+}
+
+.cart-title{
+  @apply w-full h-fit text-[42px] text-[#2A2A2A];
+}
+
+.cart-content{
+  @apply w-full h-fit flex flex-row;
+}
+
+.cart-content-2{
+  @apply w-full h-fit flex flex-row;
+}
+
+.cart-list{
+  @apply w-full h-fit flex flex-col gap-5;
+}
+
+.cart-item{
+  @apply w-full h-fit flex flex-row items-start justify-between p-6 border-[0.5px] border-[#8888888e] rounded-sm gap-2;
+}
+
+.item-identity{
+  @apply w-full h-fit flex flex-col items-end gap-2;
+}
+
+.item-name{
+  @apply w-full h-fit text-[20px] text-[#2A2A2A];
+}
+
+.item-price{
+  font-family: "Cabin";
+  @apply w-full h-fit text-[18px] text-[#2A2A2A];
+}
+
+.quantity-controls{
+  @apply w-fit h-fit flex flex-row items-center gap-2;
+}

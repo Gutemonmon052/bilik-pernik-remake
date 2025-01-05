@@ -1,0 +1,58 @@
+.login-bg {
+  @apply w-full h-screen flex flex-col items-end justify-end absolute z-0;
+}
+
+.login-bg-media {
+  @apply w-full h-full object-cover relative overflow-hidden;
+}
+
+.login-bg-cover {
+  @apply w-full h-full bg-[#2a2a2a70] absolute z-10;
+}
+
+.login-content {
+  @apply w-full h-screen flex flex-row items-center justify-between relative z-30 py-6 px-6;
+}
+
+.login-text{
+  @apply w-full h-full flex flex-col items-center justify-center gap-2 px-24 text-[#FAFAFA];
+}
+
+.login-text h1{
+  @apply h-fit w-full text-[33px] leading-[40px];
+}
+
+.login-text p{
+  @apply h-fit w-full text-[20px] leading-[22px];
+}
+
+.login {
+  @apply w-fit h-fit flex flex-col items-center justify-center gap-6 px-5 rounded-md drop-shadow-md py-6;
+}
+
+.login-iden{
+  @apply w-full h-fit flex flex-row items-center justify-center gap-2 p-6;
+}
+
+.login-logo {
+  @apply w-[35px] h-[35px] flex items-center justify-center;
+}
+
+.login-title {
+  font-family: "Sniglet";
+  @apply h-fit w-fit text-[33px] text-[#2A2A2A] leading-[33px] text-center;
+}
+
+.login-form {
+  @apply w-full h-fit flex flex-col items-center justify-center gap-5;
+}
+
+.login-btn {
+  font-family: "Cabin";
+  @apply w-full h-fit;
+}
+
+.choose-register{
+  @apply w-full h-fit flex flex-row items-center justify-center ;
+}
+

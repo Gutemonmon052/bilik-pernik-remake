@@ -1,0 +1,55 @@
+.register-bg {
+  @apply w-full h-screen flex flex-col items-end justify-end absolute z-0;
+}
+
+.register-bg-media {
+  @apply w-full h-full object-cover relative overflow-hidden;
+}
+
+.register-bg-cover {
+  @apply w-full h-full bg-gradient-to-t from-[#2a2a2ab6] absolute z-10;
+}
+
+
+.register {
+  @apply w-fit h-fit flex flex-col items-center justify-center gap-6 px-5 rounded-md drop-shadow-md py-4;
+}
+
+.register-content {
+  @apply w-full h-screen flex flex-row items-center justify-center relative z-30 py-12 px-4;
+}
+
+
+.register-text{
+  @apply w-full h-full flex flex-col items-center justify-center gap-2 px-24 text-[#FAFAFA];
+}
+
+.register-text h1{
+  @apply h-fit w-full text-[33px] leading-[40px];
+}
+
+.register-text p{
+  @apply h-fit w-full text-[20px] leading-[22px];
+}
+
+.register-iden{
+  @apply w-full h-fit flex flex-row gap-2 items-center justify-center py-4;
+}
+
+.register-logo {
+  @apply w-[35px] h-[35px] flex items-center justify-center;
+}
+
+.register-title {
+  font-family: "Sniglet";
+  @apply h-fit w-fit text-[28px] text-[#2A2A2A] leading-[28px] text-center;
+}
+
+.register-form {
+  @apply w-full h-fit flex flex-col items-center justify-center gap-5;
+}
+
+.register-btn {
+  font-family: "Cabin";
+  @apply w-full h-fit;
+}

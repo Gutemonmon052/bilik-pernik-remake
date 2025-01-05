@@ -1,0 +1,52 @@
+.productdet{
+  @apply w-full h-fit flex flex-row justify-center items-center gap-5 px-20 py-32;
+}
+
+.productdet-media{
+  @apply w-full h-fit;
+}
+
+.productdet-info{
+  @apply w-full h-fit flex flex-col justify-start items-start gap-5;
+}
+
+.productdet-info-title{
+  font-family: "Sniglet";
+  @apply h-fit w-fit text-[40px] text-[#2A2A2A] leading-[48px] text-center;
+}
+
+.productdet-info-desc{
+  font-family: "Cabin";
+  @apply text-[24px] text-[#1e1e1e] leading-[18px] w-full h-fit;
+}
+
+.productdet-info-price{
+  font-family: "Cabin";
+  @apply text-[24px] text-[#1e1e1e] leading-[18px] w-full h-fit;
+}
+
+.productdet-info-btn{
+  @apply w-full h-fit flex flex-row justify-start items-center gap-5;
+}
+
+/*Product Card*/
+
+.bp-card-product{
+  @apply w-full h-fit flex flex-col gap-5 bg-base-100 border-[1px] border-primary;
+}
+
+.bp-card-product-media{
+  @apply w-full h-[275px] flex items-center justify-center;
+}
+
+.bp-card-product-media img{
+  @apply w-full h-full object-cover;
+}
+
+.bp-card-product-info{
+  @apply w-full h-fit flex flex-row gap-5 justify-between items-center px-6 py-5;
+}
+
+.bp-card-product:hover{
+  @apply ease-out duration-100 scale-75;
+}

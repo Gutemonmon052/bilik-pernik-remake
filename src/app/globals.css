@@ -2,20 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "Fjalla One";
+  src: url("../../public/assets/fonts/Fjalla_One/FjallaOne-Regular.ttf");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "Cantarell";
+  src: url("../../public/assets/fonts/Cantarell/Cantarell-Regular.ttf");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Fjalla One";
+}
+
+body {
+  font-family: "Cantarell";
+}
+
+:root {
+  --background: #fafafa;
+  --foreground: #171717;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  @import "../css/auth/login.css";
+  @import "../css/auth/register.css";
+
+  @import "../css/navbar.css";
+
+  @import "../css/homepage/jumbotron.css";
+  @import "../css/homepage/benefit.css";
+  @import "../css/homepage/offer-product.css";
+
+  @import "../css/cartpage/cart.css";
+
+  @import "../css/product/product-det.css";
+
+  @import "../css/session-active.css";
 }

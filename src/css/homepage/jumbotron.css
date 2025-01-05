@@ -1,0 +1,40 @@
+.jumbotron {
+  @apply relative w-full h-fit flex flex-col items-center justify-center pt-32 max-md:pt-20 gap-8;
+}
+
+.jumbotron-content {
+  @apply w-fit h-fit flex flex-col gap-5 justify-center items-center;
+}
+
+.jumbotron-text-title {
+  @apply h-fit w-full text-[64px] text-[#2A2A2A] leading-[70px] text-center;
+}
+
+/* .jumbotron-text-benefits {
+  @apply w-full h-fit flex flex-row items-center justify-start;
+} */
+
+
+.jumbotron-text-desc {
+  @apply text-[18px] text-[#1e1e1e] leading-[18px] w-full h-fit;
+}
+
+.jumbotron-media {
+  @apply w-full h-[600px] overflow-hidden relative;
+}
+
+.jumbotron-media-image {
+  @apply w-full h-full object-cover relative;
+}
+
+.jumbotron-media-cover {
+  @apply w-full h-full bg-gradient-to-t from-[#2a2a2acc] absolute z-10;
+}
+
+.jumbotron-text-btn{
+  @apply w-full h-fit text-[18px] flex justify-center items-center;
+}
+
+.jumbotron-decor{
+  @apply w-full h-[20px] absolute z-40 rounded-t-3xl bg-[#FAFAFA];
+}

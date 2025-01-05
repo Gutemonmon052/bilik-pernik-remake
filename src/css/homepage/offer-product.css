@@ -1,0 +1,12 @@
+.product-offer{
+  @apply w-full h-fit flex flex-col gap-4 px-20 py-10;
+}
+
+.product-offer-title{
+  font-family: "Sniglet";
+  @apply h-fit w-full text-[40px] text-[#2A2A2A] leading-[48px] text-center;
+}
+
+.product-offer-list{
+  @apply w-full h-fit flex flex-row justify-center items-center gap-6;
+}
