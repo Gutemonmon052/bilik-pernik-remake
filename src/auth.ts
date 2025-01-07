@@ -1,6 +1,17 @@
-import NextAuth, { User } from "next-auth";
+import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
+import { User } from "next-auth";
+
+interface CustomUser extends User {
+  authToken?: string;
+  details: {
+    id:number;
+    created_at:number;
+    email: string;
+    username: string;
+  };
+}
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   session: {
@@ -53,7 +64,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   ],
   callbacks: {
     async jwt({ token, user }) {
-      if (user) {
+      if (user && 'authToken' in user) {
         token.id = user.id;
         token.username = user.name;
         token.email = user.email;
@@ -90,11 +101,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
     async session({ session, token }) {
       if (token) {
-        session.user.id = token.id as string;
-        session.user.name = token.name as string;
-        session.user.email = token.email as string;
-        session.user.authToken = token.authToken as string; // Tambahkan authToken
-        session.user.details = token.userData as string; // Tambahkan userData
+        session.user = {
+          id: token.id as string,
+          name: token.name,
+          email: token.email as string,
+          authToken: token.authToken,
+          details: token.userData,
+        } as any;
       }
       return session;
     },

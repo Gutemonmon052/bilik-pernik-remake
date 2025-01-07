@@ -6,4 +6,5 @@ export interface ICart {
   qty: number;
   user_id: number;
   _products: IProduct ;
+  checked: boolean;
 }

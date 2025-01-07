@@ -2,12 +2,11 @@
 import { ProductDets } from "@/components/products/product-det";
 import { getData } from "@/hooks/get-data";
 import { IProduct } from "@/interfaces/iproduct";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export default function ProductDet() {
   const path = usePathname().split("/");
-  let slug_dt = path[path.length - 1];
+  const slug_dt = path[path.length - 1];
 
   const { data, loading, error } = getData(
     "https://x8ki-letl-twmt.n7.xano.io/api:5v6_rKI6/products/" + slug_dt

@@ -1,17 +1,15 @@
 "use client";
 import Image from "next/image";
 import * as React from "react";
-import { useSession } from "next-auth/react"; 
+import { useSession } from "next-auth/react";
 import { ICart } from "@/interfaces/icart";
 
-
-export function Cart({}) {
+export function Cart() {
   const [cartItems, setCartItems] = React.useState<ICart[]>([]);
   const [loading, setLoading] = React.useState(false);
-  const [error, setError] = React.useState("");
-
-  const { data: session } = useSession(); 
-  const userId = session?.user?.details.id; 
+  const [error, setError] = React.useState<string>("");
+  const { data: session } = useSession();
+  const userId = (session?.user as { details: { id: number } })?.details.id;
 
   React.useEffect(() => {
     if (!userId) {
@@ -43,8 +41,9 @@ export function Cart({}) {
 
         setCartItems(data);
       } catch (err) {
-        console.error(err.message || "An error occurred.");
-        setError(err.message || "An error occurred.");
+        const errorMessage = err instanceof Error ? err.message : "An error occurred.";
+        console.error(errorMessage);
+        setError(errorMessage);
       } finally {
         setLoading(false);
       }
@@ -57,7 +56,7 @@ export function Cart({}) {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
         item.id === id
-          ? { ...item, qty: Math.max(1, item.qty + change) } // Pastikan kuantitas minimal 1
+          ? { ...item, qty: Math.max(1, item.qty + change) }
           : item
       )
     );
@@ -92,8 +91,9 @@ export function Cart({}) {
 
       setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
     } catch (err) {
-      console.error(err.message || "An error occurred.");
-      setError(err.message || "An error occurred.");
+      const errorMessage = err instanceof Error ? err.message : "An error occurred.";
+      console.error(errorMessage);
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -179,3 +179,4 @@ export function Cart({}) {
     </div>
   );
 }
+

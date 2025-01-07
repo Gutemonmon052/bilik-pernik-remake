@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { User } from "next-auth";
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,7 +17,13 @@ export function Navbar() {
   const [loadingCart, setLoadingCart] = React.useState(false);
   const [cartError, setCartError] = React.useState("");
 
-  const userId = session?.user?.details.id;
+  const userId = (session?.user as any)?.details.id;
+
+  interface CustomUser extends User {
+    details: {
+      username: string;
+    };
+  }
 
   const {
     products: allItems = [],
@@ -80,9 +87,14 @@ export function Navbar() {
         const totalItems = data.length;
 
         setCartTotal(totalItems);
-      } catch (err) {
-        console.error(err.message || "An error occurred.");
-        setCartError(err.message || "An error occurred.");
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          console.error(err.message || "An error occurred.");
+          setCartError(err.message || "An error occurred.");
+        } else {
+          console.error("An unknown error occurred.");
+          setCartError("An unknown error occurred.");
+        }
       } finally {
         setLoadingCart(false);
       }
@@ -215,8 +227,8 @@ export function Navbar() {
                         Hi{" "}
                         {session?.user?.name
                           ? session.user.name
-                          : session?.user?.details?.username
-                          ? session.user.details.username
+                          : (session.user as CustomUser).details.username
+                          ? (session.user as CustomUser).details.username
                           : "User"}
                       </p>
                     </a>

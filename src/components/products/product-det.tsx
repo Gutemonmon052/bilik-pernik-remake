@@ -6,8 +6,8 @@ import { useSession } from "next-auth/react";
 
 export function ProductDets(props: IProduct) {
   const { data: session } = useSession(); // Mendapatkan session
-  const userId = session?.user?.details.id; // Asumsikan user ID disimpan di session
-
+  const userId = (session?.user as any)?.details.id;
+  
   const [quantity, setQuantity] = React.useState(1); // State untuk jumlah produk
 
   const handleAddToCart = async () => {

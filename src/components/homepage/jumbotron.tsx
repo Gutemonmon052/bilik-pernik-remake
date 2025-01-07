@@ -1,6 +1,5 @@
 import Image from "next/image";
 import * as React from "react";
-import { Benefit } from "./benefit";
 
 export function Jumbotron({}) {
   return (
